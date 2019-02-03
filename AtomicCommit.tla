@@ -33,6 +33,6 @@ Spec == Init /\ [][Next]_state
 ValidCommit ==
   (\E n \in Node : state[n] = "committed") => (\A n \in Node : Input[n] = 1)
 
-THEOREM Spec => (TypeOk /\ ValidCommit)
+THEOREM Spec => [](TypeOk /\ ValidCommit)
 
 ================================================================================
