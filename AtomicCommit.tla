@@ -15,6 +15,7 @@ TypeOk ==
 
 Commit(n) ==
   /\ \A m \in Node : Input[m] = 1
+  /\ \A m \in Node : state[m] /= "aborted"
   /\ state' = [state EXCEPT ![n] = "committed"]
 
 Abort(n) ==
@@ -30,9 +31,12 @@ Next ==
 
 Spec == Init /\ [][Next]_state
 
+AllAgree ==
+  ~ \E n, m \in Node: state[n] = "committed" /\ state[m] = "aborted"
+
 ValidCommit ==
   (\E n \in Node : state[n] = "committed") => (\A n \in Node : Input[n] = 1)
 
-THEOREM Spec => [](TypeOk /\ ValidCommit)
+THEOREM Spec => [](TypeOk /\ AllAgree /\ ValidCommit)
 
 ================================================================================
