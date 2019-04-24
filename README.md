@@ -86,6 +86,7 @@ I recommend watching this series.
 - TLC can be slow, really slow
     - I ran TLC on my BPaxos stuff on 64 cores for hours and I exhausted 16 GB
       of disk before it could finish. Could take days to simulate.
+    - See https://lamport.azurewebsites.net/video/video7-script.pdf slide 200.
 - Sometimes hard to check if your system is doing what you expect.
     - Your specification might accidentally be disallowing certain actions that
       you think should be legal.
@@ -99,11 +100,22 @@ I recommend watching this series.
     - automated theorem proving
 
 ## Other Things
+- Constant expression vs state expression vs action expression vs temporal
+  formula
 - Liveness
 - More advanced forms of refinement
 - PlusCal
 - TLAPS
 
+## Resources
+- [Specifying Systems](https://lamport.azurewebsites.net/tla/book.html)
+- [Introduction to TLA+ Model Checking in the Command Line][command_line]
+- [TLA+ in Practice and Theory](https://pron.github.io/tlaplus)
+- [Practical TLA+](https://www.apress.com/gp/book/9781484238288)
+- [Standard Library][stdlib]
+
 [amazon_cacm]: https://cacm.acm.org/magazines/2015/4/184701-how-amazon-web-services-uses-formal-methods/fulltext
 [genpaxos]: https://www.microsoft.com/en-us/research/wp-content/uploads/2016/02/tr-2005-33.pdf
 [FGGC_tr]: https://drive.google.com/file/d/0BwFkGepvBDQoRjNYRGJTdWQ0SzA/view
+[command_line]: https://medium.com/@bellmar/introduction-to-tla-model-checking-in-the-command-line-c6871700a6a2
+[stdlib]: https://github.com/tlaplus/tlaplus/tree/8bc89d303ce22a96f401104feed7452ba49111ef/tlatools/src/tla2sany/StandardModules
