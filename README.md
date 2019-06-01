@@ -70,6 +70,8 @@ I recommend watching this series.
       satisfies the atomic commitment spec.
 
 ## Limitations and Alternatives
+See https://github.com/mwhittaker/tla_talk/issues/1 for clarifications!
+
 - Model checking is not theorem proving.
     - Model checkers exhaustively enumerate executions looking for errors, but
       they're not proving anything about the correctness of your specification.
